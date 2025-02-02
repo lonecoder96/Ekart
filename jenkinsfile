@@ -79,7 +79,7 @@ pipeline {
        stage('Trivy-Image-Scan') {
             steps {
                sh "trivy image devopsjk2023/shopping-cart:latest"
-               sh "trivy image --severity HIGH,CRITICAL --format table -o shopping-cart.html devopsjk2023/shopping-cart:latest"
+               sh "trivy image --severity HIGH,CRITICAL --format json -o shopping-cart.json devopsjk2023/shopping-cart:latest"
             }
         }   
 
